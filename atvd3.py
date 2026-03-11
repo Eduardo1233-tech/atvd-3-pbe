@@ -10,32 +10,33 @@ estoque_mercado = [
 ]
 
 def mostra_estoque():
-    print("\n" + "="*30)
-    print(" ESTOQUE DO MERCADO")
-    print("="*30)
-
-    while i, item in enumerate(estoque_mercado):
+    print("\n" + "="*35)
+    print("      ESTOQUE DO MERCADO")
+    print("="*35)
+    
+    i = 0  
+    while i < len(estoque_mercado):
+        item = estoque_mercado[i]
         print(f"{i} | {item['nome']:20} | R$ {item['preco']:>6.2f}")
-    print("-" * 30)
+        i += 1  
+        
+    print("-" * 35)
 
 def adiciona_produto(nome, preco):
     novo = {"nome": nome, "preco": preco}
     estoque_mercado.append(novo)
-    print(f"n[+] Sucesso: {nome} adicionado ao estoque.")
+    print(f"\n[+] Sucesso: {nome} adicionado.")
 
 def remove_produto(indice):
-    try:
+    
+    if 0 <= indice < len(estoque_mercado):
         removido = estoque_mercado.pop(indice)
-        print(f"n[-] Removido: {removido['nome']}")
-    except IndexError:
-        print("n[!] Erro: Posição não encontrada no estoque.")
-
+        print(f"\n[-] Removido: {removido['nome']}")
+    else:
+        print(f"\n[!] Erro: Índice {indice} inexistente.")
 
 
 mostra_estoque()
-
 adiciona_produto("Detergente Neutro", 2.50)
-
 remove_produto(3)
-
 mostra_estoque()
