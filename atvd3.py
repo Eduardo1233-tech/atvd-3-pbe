@@ -14,7 +14,7 @@ def mostra_estoque():
     print(" ESTOQUE DO MERCADO")
     print("="*30)
 
-    for i, item in enumerate(estoque_mercado):
+    while i, item in enumerate(estoque_mercado):
         print(f"{i} | {item['nome']:20} | R$ {item['preco']:>6.2f}")
     print("-" * 30)
 
