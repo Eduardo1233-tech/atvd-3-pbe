@@ -1,4 +1,3 @@
-
 estoque_mercado = [
     {"nome": "Arroz 5kg", "preco": 25.00},
     {"nome": "Feijão Preto 1kg", "preco": 8.50},
@@ -11,7 +10,7 @@ estoque_mercado = [
 ]
 
 def mostra_estoque():
-    print("n" + "="*30)
+    print("\n" + "="*30)
     print(" ESTOQUE DO MERCADO")
     print("="*30)
 
